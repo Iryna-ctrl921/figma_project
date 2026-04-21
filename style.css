@@ -10,6 +10,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
 body {
     background-color: var(--bg-blue);
     color: var(--text-white);
@@ -69,11 +74,11 @@ header {
 .hero {
     width: 100%;
     padding-top: 140px;
-
 }
 
 .hero-container {
     max-width: 1400px; 
+    width: calc(100% - 40px); 
     margin: 0 auto; 
     display: flex;
     flex-direction: column;
@@ -94,6 +99,7 @@ header {
     border-bottom: 1px solid white; 
     padding-bottom: 40px; 
     margin-bottom: 20px; 
+    word-break: break-word; 
 }
 
 .hero-subtitle {
@@ -115,6 +121,7 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     max-width: 1400px;
+    width: calc(100% - 40px); 
     margin: 0 auto;
     border-left: 1px solid white;
     border-right: 1px solid white;
@@ -145,6 +152,7 @@ header {
     display: block;
     margin-bottom: 40px;
     box-shadow: 0 4px 15px rgb(54, 54, 54);
+    object-fit: cover;
 }
 
 .item-id {
@@ -204,4 +212,142 @@ header {
     align-items: center;
     font-weight: 900;
     font-size: 40px;
+}
+
+
+@media (max-width: 1028px) {
+    .header-wide-container {
+        padding: 15px 20px;
+    }
+    
+    .logo, .nav-list a {
+        font-size: 20px;
+    }
+    
+    .nav-list {
+        gap: 20px;
+    }
+    
+    .hero {
+        padding-top: 100px;
+    }
+
+    .main-title {
+        font-size: 100px;
+        padding-bottom: 40px;
+    }
+
+    .hero-subtitle {
+        font-size: 20px;
+        padding-top: 40px;
+    }
+
+    .card {
+        padding: 100px 15px;
+    }
+
+    .card-img img {
+        width: 280px;
+        height: 280px;
+    }
+
+    .social {
+        padding: 60px 0;
+    }
+
+    .made-by {
+        font-size: 30px;
+        margin-bottom: 80px;
+    }
+
+    .social-links {
+        font-size: 80px;
+    }
+
+    .footer-content {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        height: 60px; 
+        padding: 0;
+    }
+
+    .header-wide-container {
+        flex-direction: row; 
+        padding: 0 20px;
+        height: 100%;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 16px; 
+    }
+    
+    .nav-list a {
+        font-size: 16px;
+    }
+
+    .nav-list {
+        flex-wrap: nowrap; 
+        gap: 12px;
+    }
+
+    .hero {
+        padding-top: 100px; 
+    }
+
+    .main-title {
+        font-size: 14vw; 
+        padding-top: 60px;
+        padding-bottom: 40px;
+        margin-bottom: 15px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+        padding-top: 40px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;     
+    }
+
+    .card {
+        padding: 60px 15px;
+        border-bottom: 1px solid white;
+        border-right: none; 
+    }
+
+    .card:nth-last-child(-n+2) {
+        border-bottom: 1px solid white; 
+    }
+
+    .card:last-child {
+        border-bottom: none; 
+    }
+
+    .card-img img {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 25px;
+    }
+
+    .made-by {
+        font-size: 20px;
+        margin-bottom: 60px;
+        padding-bottom: 60px;
+    }
+
+    .social-links {
+        font-size: 45px;
+    }
+
+    .footer-content {
+        flex-direction: row; 
+        font-size: 18px; 
+        gap: 10px;
+    }
 }
